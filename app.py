@@ -58,6 +58,8 @@ customer_schema = CustomerSchema()
 # Create a Customer
 @app.route('/customers', methods=['POST'])
 def add_customer():
+
+    # fetch data passed from request - using postman/swagger 
     first_name = request.json['first_name']
     last_name = request.json['last_name']
     email = request.json['email']
@@ -66,8 +68,10 @@ def add_customer():
     state = request.json['state']
     zip_code = request.json['zip_code']
 
+    # variable instantiated to the Customer class, passing the fields in
     new_customer = Customer(first_name, last_name, email, address, city, state, zip_code)
 
+    # add and commit the new customer to the database
     db.session.add(new_customer)
     db.session.commit()
 
