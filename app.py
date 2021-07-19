@@ -1,5 +1,5 @@
 # python3
-from flask import Flask, request, jsonify, abort, url_for
+from flask import Flask, request, jsonify, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os
