@@ -97,6 +97,8 @@ def query_city():
         # KeyError occurs due to the required order of execution, so I catch the exception
     except KeyError as err:
         print(f"Caught Exception -> Key Error: {err}, continuing execution")
+
+        # query and return all customers
         all_customers = Customer.query.all()
         result = customer_schema.dump(all_customers,many=True)
         if not result:
