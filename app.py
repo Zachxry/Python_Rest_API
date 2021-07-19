@@ -53,9 +53,13 @@ class CustomerSchema(ma.Schema):
         # fields that are allowed to be shown
         fields = ('id','first_name','last_name','email','address','city','state','zip_code') 
 
+
 # Init Schema 
 customer_schema = CustomerSchema()
 
+# From the python console to create database
+# from app import db 
+# db.create_call()
 
 # Create a Customer
 @app.route('/customers', methods=['POST'])
