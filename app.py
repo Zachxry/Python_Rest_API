@@ -13,6 +13,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 # SQLAlchemy Database - Correctly locate database file in the path
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
+
+# Save system resources by disabling tracking system
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Init database
